@@ -21,6 +21,10 @@ con.on('open', () =>
     console.log('==> Database connected...')
 );
 
+// middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // webpage routing
 app.use('/calculations', calcRouter);
 

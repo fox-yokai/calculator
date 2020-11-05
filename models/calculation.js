@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const calculationSchema = new Schema({
-    calc: {
+    calculation: {
         type: String,
         required: true
     }

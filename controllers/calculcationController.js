@@ -1,3 +1,4 @@
+const { Calculation } = require('../models');
 const db = require('../models');
 
 module.exports = {
@@ -5,5 +6,6 @@ module.exports = {
         db.Calculation.find().sort({$natural: -1}).limit(10)
         .then(data => res.json(data))
         .catch(err => res.json(err))
-    }
+    },
+
 }
