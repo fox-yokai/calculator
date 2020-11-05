@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
+const calcRouter = require('./routes/calculations');
 
 const PORT = process.env.PORT || 3001;
 
@@ -16,11 +17,13 @@ mongoose.connect(
 
 const con = mongoose.connection;
 
-con.on('open', function(){
+con.on('open', () =>
     console.log('==> Database connected...')
-});
+);
 
 // webpage routing
+app.use('/calculations', calcRouter);
+
 app.get('/', function (req, res) {
     res.send('Hello World')
   })
