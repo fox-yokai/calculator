@@ -1,15 +1,15 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const calcRouter = require('./routes/calculations');
 const cors = require('cors');
-const url = "mongodb+srv://dbFoxUser:DfFFQtv49sArt7Nn@cluster0.9ev37.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 const PORT = process.env.PORT || 3001;
 
 // connect to the Mongo DB
-mongoose.connect(url, 
+mongoose.connect(process.env.MONGO_URI, 
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
