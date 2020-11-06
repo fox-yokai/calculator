@@ -13,7 +13,8 @@
     "nodemon": "^2.0.6"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fox-yokai/calculator/issues"
+  },
+  "engines": {
+    "node": "12.13.1"
   },
   "homepage": "https://github.com/fox-yokai/calculator#readme"
 }
