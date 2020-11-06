@@ -7,12 +7,14 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.6.3",
-    "mongoose": "^5.10.11",
+    "mongoose": "^5.10.11"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.6"
   },
-  "devDependencies": {},
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fox-yokai/calculator/issues"
+  },
+  "engines": {
+    "node": "12.13.1"
   },
   "homepage": "https://github.com/fox-yokai/calculator#readme"
 }
