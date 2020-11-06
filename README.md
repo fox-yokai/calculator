@@ -1,13 +1,10 @@
-# calculator
- A web app using JavaScript which logs calculations as they happen and shares those calculations with everyone connected to the app.
+# Calculator
 
- ## Phase 1 - back end
- 
- 1. create express server
- 2. create mongodb
- 3. create routes
+## Purpose
+This is a web app built using JavaScript which logs calculations as they happen and shares those calculations with everyone connected to the app.
 
-## Phase 2 - front end
-    1. create html
-    2. create js
-    3. create ajax calls to db
+## HoW to Use
+This simple calculator will allow you to add, subtract, divide, multiply, or find the power of any two numbers. 
+
+## Link
+[https://frozen-reef-88932.herokuapp.com/]
