@@ -99,5 +99,21 @@ function sendCalculation(calculation) {
       });
 }
 
+function getPreviousTen() {
+    var items = [];
+    $.getJSON( "http://127.0.0.1:3001/calculations", function( data ) {
+        $.each( data, function( key, val ) {
+            items.push( "<li class='list-group-item'>" + val.calculation + "</li>" );
+        });
+
+        $( "<ul/>", { html: items.join( "" )}).appendTo( "#previous" );
+        // $("#previous").replaceWith({ html: items.join(" ")})
+    })
+
+}
+
+getPreviousTen();
+
+
 
   });

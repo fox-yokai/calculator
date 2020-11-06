@@ -4,18 +4,19 @@ const path = require('path');
 const mongoose = require('mongoose');
 const calcRouter = require('./routes/calculations');
 const cors = require('cors');
+const url = "mongodb+srv://dbFoxUser:DfFFQtv49sArt7Nn@cluster0.9ev37.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 const PORT = process.env.PORT || 3001;
 
 // connect to the Mongo DB
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/calculations', 
+mongoose.connect(url, 
 {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-  useCreateIndex: true
-});
+  useCreateIndex: true,
+  serverSelectionTimeoutMS: 5000
+}).catch(err => console.log(err.reason));
 
 const con = mongoose.connection;
 
