@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require('path');
 const mongoose = require('mongoose');
 const calcRouter = require('./routes/calculations');
 
@@ -29,8 +30,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/calculations', calcRouter);
 
 app.get('/', function (req, res) {
-    res.send('Hello World')
-  })
+    res.sendFile(path.join(__dirname + '/index.html'));
+  });
 
 // starts the express server
 app.listen(PORT, () =>

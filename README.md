@@ -8,3 +8,6 @@
  3. create routes
 
 ## Phase 2 - front end
+    1. create html
+    2. create js
+    3. create ajax calls to db
