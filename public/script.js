@@ -114,6 +114,13 @@ function getPreviousTen() {
 
 getPreviousTen();
 
+function updateCalculations() {
+  setInterval(function() {
+    $("#previous").empty();
+    getPreviousTen();
+  }, 5000)
+};
 
+updateCalculations();
 
   });
