@@ -56,25 +56,29 @@ $(document).ready(function() {
       firstNumber = parseInt(firstNumber);
       secondNumber = parseInt(secondNumber);
 
-      if (operator === "plus") {
+      if (operator === "+") {
         result = firstNumber + secondNumber;
       }
 
-      else if (operator === "minus") {
+      else if (operator === "-") {
         result = firstNumber - secondNumber;
       }
 
-      else if (operator === "times") {
+      else if (operator === "x") {
         result = firstNumber * secondNumber;
       }
 
-      else if (operator === "divide") {
+      else if (operator === "÷") {
         result = firstNumber / secondNumber;
       }
 
-      else if (operator === "power") {
+      else if (operator === "^") {
         result = Math.pow(firstNumber, secondNumber);
       }
+
+      const calculation = `${firstNumber} ${operator} ${secondNumber}=${result}`
+
+      sendCalculation(calculation);
 
       $("#result").text(result);
 
@@ -84,4 +88,16 @@ $(document).ready(function() {
     });
 
     initializeCalculator();
+
+function sendCalculation(calculation) {
+    $.ajax({
+        type: "POST",
+        url: "http://127.0.0.1:3001/calculations/add",
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify({ "calculation" : calculation})
+      });
+}
+
+
   });

@@ -4,6 +4,7 @@
   "description": "A web app using JavaScript which logs calculations as they happen and shares those calculations with everyone connected to the app.",
   "main": "server.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.11",

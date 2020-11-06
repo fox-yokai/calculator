@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const calcRouter = require('./routes/calculations');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3001;
 
@@ -23,6 +24,7 @@ con.on('open', () =>
 );
 
 // middleware
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
